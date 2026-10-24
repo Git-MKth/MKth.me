@@ -1,1 +1,49 @@
 # MKth.me
+
+Persönliche Startseite. Statisches HTML/CSS/JS — kein Build, keine Abhängigkeiten, kein Tracking.
+
+## Dateien
+
+| Datei | Zweck |
+| --- | --- |
+| `index.html` | Startseite (Hero, drei Karten, Footer) |
+| `legal.html` | Impressum + Datenschutz (Anker `#impressum`, `#datenschutz`) |
+| `style.css` | Alle Styles über CSS-Variablen, helles und dunkles Schema |
+| `app.js` | Theme-Umschalter (auto → hell → dunkel), Jahr im Footer |
+| `CNAME` | Custom Domain für GitHub Pages (`mkth.me`) |
+
+## Lokal ansehen
+
+```bash
+cd ~/Projects/Git-MKth/MKth.me
+python3 -m http.server 8777
+open http://127.0.0.1:8777/
+```
+
+Direktes Öffnen per `open index.html` funktioniert auch, dann greifen nur die
+`localStorage`-Pfade des Theme-Umschalters anders.
+
+## Deployment (GitHub Pages)
+
+1. Einstellungen → Pages → Source: `Deploy from a branch`, Branch `main`, Ordner `/ (root)`.
+2. Custom Domain `mkth.me` (steht bereits in `CNAME`), `Enforce HTTPS` aktivieren.
+3. DNS beim Registrar: `A`-Records auf die GitHub-Pages-IPs
+   `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`;
+   `www` als `CNAME` auf `<user>.github.io`.
+
+## Vor dem Livegang offen
+
+- [ ] Impressum: Name, Anschrift, E-Mail eintragen (`legal.html`, markierter Platzhalter)
+- [ ] Datenschutz: tatsächlichen Hoster benennen (`legal.html`)
+- [ ] Kontaktadresse im Hero-Button und in der Karte „Kontakt“ bestätigen
+- [ ] Inhalte der drei Karten ersetzen, sobald es echte Inhalte gibt
+
+## Technische Notizen
+
+- Theme: `<html data-theme="auto|light|dark">`. Ein gespeicherter Wert wird per
+  Inline-Script im `<head>` vor dem ersten Paint gesetzt (kein Flackern).
+  Ohne gespeicherte Wahl folgt die Seite `prefers-color-scheme`.
+- Farben, Radien und Abstände liegen als Tokens oben in `style.css`.
+- Animationen respektieren `prefers-reduced-motion`.
+- Der Hero-Halo fadet auf dieselbe Farbe mit Alpha 0 — nicht auf `transparent`,
+  sonst entsteht ein grauer Saum.
