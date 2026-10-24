@@ -1,94 +1,33 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="auto">
+<html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MKth.me — Marco Keith</title>
-  <meta name="description" content="Persönliche Website von Marco Keith aus dem Allgäu.">
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)">
-
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mkth.me/">
-  <meta property="og:title" content="MKth.me — Marco Keith">
-  <meta property="og:description" content="Persönliche Website von Marco Keith aus dem Allgäu.">
-  <meta property="og:locale" content="de_DE">
-  <meta name="twitter:card" content="summary">
-
+  <title>Hallo — MKth.me</title>
+  <meta name="description" content="MKth.me">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0c'/%3E%3Ctext x='32' y='43' font-family='-apple-system,Segoe UI,sans-serif' font-size='30' font-weight='600' fill='%23fbfbfd' text-anchor='middle'%3Emk%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Prevents a flash of the wrong theme: runs before first paint. -->
-  <script>
-    (function () {
-      try {
-        var stored = localStorage.getItem('theme');
-        if (stored === 'light' || stored === 'dark') {
-          document.documentElement.dataset.theme = stored;
-        }
-      } catch (e) { /* storage blocked — keep auto */ }
-    })();
-  </script>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+      background: #fbfbfd;
+      color: #0a0a0c;
+    }
+    h1 { font-size: clamp(4rem, 16vw, 12rem); margin: 0; font-weight: 700; letter-spacing: -0.02em; }
+    footer { position: fixed; bottom: 1.5rem; font-size: 0.85rem; }
+    footer a { color: inherit; opacity: 0.6; }
+    @media (prefers-color-scheme: dark) {
+      body { background: #0a0a0c; color: #fbfbfd; }
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Zum Inhalt springen</a>
-
-  <header class="site-header">
-    <a class="wordmark" href="/" aria-label="MKth.me — Startseite">MKth<span class="wordmark-dot">.</span>me</a>
-    <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Farbschema wechseln" title="Farbschema wechseln">
-      <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <circle cx="12" cy="12" r="4.2"></circle>
-        <path d="M12 2.6v2.2M12 19.2v2.2M4.6 12H2.4M21.6 12h-2.2M6.7 6.7 5.2 5.2M18.8 18.8l-1.5-1.5M17.3 6.7l1.5-1.5M5.2 18.8l1.5-1.5"></path>
-      </svg>
-      <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M20.2 14.6A8.4 8.4 0 0 1 9.4 3.8a8.6 8.6 0 1 0 10.8 10.8Z"></path>
-      </svg>
-    </button>
-  </header>
-
-  <main id="main" class="stage">
-    <div class="stage-inner">
-      <p class="overline">Willkommen</p>
-      <h1 class="display">Marco&nbsp;Keith</h1>
-      <p class="lede">
-        Persönliche Seite aus dem Allgäu — im Aufbau.
-      </p>
-      <div class="actions">
-        <a class="btn btn-primary" href="mailto:mkeith@web.de">Schreib mir</a>
-        <a class="btn" href="#mehr">Mehr erfahren</a>
-      </div>
-    </div>
-
-    <div class="glow" aria-hidden="true"></div>
-  </main>
-
-  <section class="more" id="mehr" aria-labelledby="mehr-title">
-    <h2 id="mehr-title" class="more-title">Kurz gesagt</h2>
-    <div class="cards">
-      <article class="card">
-        <h3>Hier entsteht etwas</h3>
-        <p>Diese Seite wird gerade neu gebaut. Inhalte folgen in Kürze.</p>
-      </article>
-      <article class="card">
-        <h3>Allgäu</h3>
-        <p>Zu Hause zwischen Bergen und Bodensee, südlich von Kempten.</p>
-      </article>
-      <article class="card">
-        <h3>Kontakt</h3>
-        <p>Am schnellsten per E-Mail an <a href="mailto:mkeith@web.de">mkeith@web.de</a>.</p>
-      </article>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <p>&copy; <span id="year">2026</span> MKth.me</p>
-    <nav aria-label="Rechtliches">
-      <a href="legal.html#impressum">Impressum</a>
-      <a href="legal.html#datenschutz">Datenschutz</a>
-    </nav>
-  </footer>
-
-  <script src="app.js" defer></script>
+  <h1>Hallo</h1>
+  <footer><a href="legal.html#impressum">Impressum</a> · <a href="legal.html#datenschutz">Datenschutz</a></footer>
 </body>
 </html>
