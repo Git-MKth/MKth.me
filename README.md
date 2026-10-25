@@ -6,10 +6,9 @@ Persönliche Startseite. Statisches HTML/CSS/JS — kein Build, keine Abhängigk
 
 | Datei | Zweck |
 | --- | --- |
-| `index.html` | Startseite (Hero, drei Karten, Footer) |
-| `legal.html` | Impressum + Datenschutz (Anker `#impressum`, `#datenschutz`) |
-| `style.css` | Alle Styles über CSS-Variablen, helles und dunkles Schema |
-| `app.js` | Theme-Umschalter (auto → hell → dunkel), Jahr im Footer |
+| `index.html` | Startseite (Hero) |
+| `style.css` | Styles über CSS-Variablen (aktuell ungenutzt, war für `legal.html`) |
+| `app.js` | Theme-Umschalter (aktuell ungenutzt, war für `legal.html`) |
 | `CNAME` | Custom Domain für GitHub Pages (`mkth.me`) |
 
 ## Lokal ansehen
@@ -31,12 +30,11 @@ Direktes Öffnen per `open index.html` funktioniert auch, dann greifen nur die
    `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`;
    `www` als `CNAME` auf `<user>.github.io`.
 
-## Vor dem Livegang offen
+## Stand 2026-10-26
 
-- [ ] Impressum: Name, Anschrift, E-Mail eintragen (`legal.html`, markierter Platzhalter)
-- [ ] Datenschutz: tatsächlichen Hoster benennen (`legal.html`)
-- [ ] Kontaktadresse im Hero-Button und in der Karte „Kontakt“ bestätigen
-- [ ] Inhalte der drei Karten ersetzen, sobald es echte Inhalte gibt
+`legal.html` (Impressum + Datenschutz) ist entfernt und auf der Startseite verlinkt nichts mehr darauf.
+Für eine rein private, nicht geschäftsmäßige Seite ist kein Impressum nach § 5 DDG nötig.
+Wird die Seite geschäftlich genutzt, muss `legal.html` wiederhergestellt werden (Historie: `git log -- legal.html`).
 
 ## Technische Notizen
 
